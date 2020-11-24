@@ -154,3 +154,24 @@ nav :hover{
 	padding: 50px;
 	border: transparent;
 }
+
+button{
+	background-color: #2c90c6;
+	border: 1px solid #2c90c6;
+	border-radius: 15px;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+	color: #fff;
+	font-weight: bold;
+	line-height: 48px;
+	text-align: center;
+	text-transform: uppercase;
+	width: 240px;
+}
+
+button:hover {
+	background-color: #2c70c6;
+  box-shadow: 2px 2px 20px  #2c90c6, #fff 0 -1px 2px;
+}

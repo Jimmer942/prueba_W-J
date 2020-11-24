@@ -13,7 +13,6 @@
                 <a class = "active" href="login.html">Home</a>
                 <a class = "active" href="login.html">Login</a>
                 <a class = "active" href="register.html">Register</a>
-                <a class = "active" href="url_analyser.html">News</a>
             </nav>
         </header>
     
@@ -21,10 +20,31 @@
             <div class="recuadro">
             <p class="texto">Login</p>
             <div class="Registro">
-                <form method="post" action="https://getform.org/f/70415a77-d632-4883-bf07-2e15d3f557da">
-                    <span class="fontawesome-user"></span><input type="text" required placeholder="Nombre de usuario" autocomplete="off"> 
+                <form id="loginform">
+                    <span class="fontawesome-user"></span><input type="text" name="user_name" id="user_name" required placeholder="Nombre de usuario" autocomplete="off"> 
                     <span class="fontawesome-lock"></span><input type="password" name="password" id="password" required placeholder="Contraseña" autocomplete="off"> 
-                    <input type="submit" value="Login" title="Registra tu cuenta">
+                    <button onclick="login()">Login</button>
+                    <script>
+                        function login(){
+                            let name = document.getElementById("user_name").value;
+                            let pass = document.getElementById("password").value;
+                            let u = "This is working";
+                            alert(u + ' ' + name + ' ' + pass);
+
+                            var formData = new FormData();
+
+                            formData.append("user_name", name);
+                            formData.append("user_password", pass);
+
+                            var xhr = new XMLHttpRequest();
+                            xhr.open("GET", "http://localhost:5000/login");
+                            xhr.send(formData);
+
+                            const req = xhr.responseText;
+                            alert(u + ' ' + name + ' ' + pass + '\n' + req);
+                        }
+                    </script>
+                </form>
                 </div>
         </main>
     
